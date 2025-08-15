@@ -1,26 +1,88 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense, useState, useEffect } from "react";
+import Header from "./components/Header";
+import PageLoader from "./Ui/Loader/PageLoader";
 
-function App() {
+const Home = React.lazy(() => import("./components/Home"));
+const About = React.lazy(() => import("./components/About"));
+const Services = React.lazy(() => import("./components/Services"));
+const Footer = React.lazy(() => import("./components/Footer"));
+
+const App: React.FC = () => {
+  const [visibleSections, setVisibleSections] = useState({
+    home: true, // Always show home first
+    about: false,
+    services: false,
+    footer: false,
+  });
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.id;
+            setVisibleSections((prev) => ({
+              ...prev,
+              [sectionId]: true,
+            }));
+          }
+        });
+      },
+      { rootMargin: "100px" } // Load 100px before coming into view
+    );
+
+    // Observe placeholder divs
+    const sections = ["about", "services", "footer"];
+    sections.forEach((section) => {
+      const element = document.getElementById(section);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div>
+      <Header />
+      <div className="content-wrapper">
+        <Suspense
+          fallback={
+            <PageLoader
+              isVisible={true}
+              showBackdrop={false}
+              loaderSpeed="slow"
+            />
+          }
         >
-          Learn React
-        </a>
-      </header>
+          <Home />
+        </Suspense>
+
+        <div id="about" style={{ minHeight: "100vh" }}>
+          {visibleSections.about && (
+            <Suspense fallback={<PageLoader />}>
+              <About />
+            </Suspense>
+          )}
+        </div>
+
+        <div id="services" style={{ minHeight: "100vh" }}>
+          {visibleSections.services && (
+            <Suspense fallback={<PageLoader />}>
+              <Services />
+            </Suspense>
+          )}
+        </div>
+
+        <div id="footer" style={{ minHeight: "200px" }}>
+          {visibleSections.footer && (
+            <Suspense fallback={<PageLoader />}>
+              <Footer />
+            </Suspense>
+          )}
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

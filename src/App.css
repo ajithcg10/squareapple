@@ -1,6 +1,12 @@
 .App {
   text-align: center;
 }
+/* Global CSS or Tailwind Customization */
+@layer base {
+  .content-wrapper {
+    margin-top: calc(4rem + 1px);
+  }
+}
 
 .App-logo {
   height: 40vmin;
