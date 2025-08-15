@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { NavItems } from "../data/Nav_data"; // Import navigation items
 import { HamburgerButton } from "../Ui/HamburgerButton";
 import MobileNavigation from "../Ui/MobileNavigation";
-import logoUrl from "@/assets/images/logo.jpeg";
 
 // Data for the navigation items
 
@@ -27,7 +26,7 @@ const Header: React.FC = () => {
     >
       <div className="container mx-auto flex justify-between items-center">
         <h1>
-          <img src="/assets/images/logo.jpeg" alt="Logo" className="h-12" />
+          <img src="images/logo.jpeg" alt="Logo" className="h-12" />
         </h1>
 
         <nav>
