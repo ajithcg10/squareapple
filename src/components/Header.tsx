@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { NavItems } from "../data/Nav_data"; // Import navigation items
+import { NavItems } from "../data/Nav_data";
 import { HamburgerButton } from "../Ui/HamburgerButton";
 import MobileNavigation from "../Ui/MobileNavigation";
-
-// Data for the navigation items
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -22,15 +20,17 @@ const Header: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="bg-peacockGreen bg-opacity-40 backdrop-blur-lg sticky top-0 z-30 w-full font-medium text-green-950 p-6"
+      className="bg-gradient-to-br from-gray-900 to-gray-800 sticky top-0 z-30 w-full font-medium p-6"
     >
       <div className="container mx-auto flex justify-between items-center">
+        {/* Logo */}
         <h1>
-          <img src="images/logo.jpeg" alt="Logo" className="h-12" />
+          <img src="images/logo.png" alt="Logo" className="h-12" />
         </h1>
 
-        <nav>
-          <ul className="flex gap-4 space-x-6 md:space-x-4">
+        <nav className="flex items-center">
+          {/* Desktop menu - hidden on <768px */}
+          <ul className="hidden md:flex gap-6">
             {NavItems.map((item) => (
               <motion.li
                 key={item.href}
@@ -44,7 +44,7 @@ const Header: React.FC = () => {
                       .getElementById(item.href)
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
-                  className="text-black hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:bg-clip-text hover:text-transparent text-lg transition-colors duration-300"
+                  className="text-[#71cac7] hover:text-gradient text-lg transition-colors duration-300"
                 >
                   {item.label}
                 </button>
@@ -56,10 +56,16 @@ const Header: React.FC = () => {
               </motion.li>
             ))}
           </ul>
-          <HamburgerButton
-            isOpen={isMobileMenuOpen}
-            onClick={toggleMobileMenu}
-          />
+
+          {/* Hamburger button - only visible on <768px */}
+          <div className="md:hidden">
+            <HamburgerButton
+              isOpen={isMobileMenuOpen}
+              onClick={toggleMobileMenu}
+            />
+          </div>
+
+          {/* Mobile Navigation */}
           <MobileNavigation
             isOpen={isMobileMenuOpen}
             onClose={closeMobileMenu}

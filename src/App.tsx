@@ -44,7 +44,7 @@ const App: React.FC = () => {
   return (
     <div>
       <Header />
-      <div className="content-wrapper">
+      <div className="content-wrapper bg-main text-main">
         <Suspense
           fallback={
             <PageLoader

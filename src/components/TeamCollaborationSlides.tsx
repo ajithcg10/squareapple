@@ -46,7 +46,7 @@ const TeamCollaborationSlides: React.FC = () => {
   const centerSlide = visibleSlides[2]; // Middle slide is the active one
 
   return (
-    <div className="py-16 bg-gray-50">
+    <div className="py-16 ">
       <div className="max-w-7xl mx-auto px-4">
         <div className="relative">
           {/* Team Photos Carousel */}
@@ -159,7 +159,7 @@ const TeamCollaborationSlides: React.FC = () => {
           >
             <h2
               className={`
-              text-4xl font-bold text-gray-900 mb-6 transition-all duration-700 ease-out
+              text-4xl font-bold text-gradient  mb-6 transition-all duration-700 ease-out
               ${hasInitialized ? "opacity-100 scale-100" : "opacity-0 scale-95"}
             `}
               style={{
@@ -170,7 +170,7 @@ const TeamCollaborationSlides: React.FC = () => {
             </h2>
             <p
               className={`
-              text-lg text-gray-600 leading-relaxed transition-all duration-700 ease-out
+              text-lg  leading-relaxed transition-all duration-700 ease-out
               ${hasInitialized ? "opacity-100 scale-100" : "opacity-0 scale-95"}
             `}
               style={{

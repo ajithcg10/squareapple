@@ -14,7 +14,7 @@ export const Data_services: ServiceItem[] = [
       "Visual Identity",
       "Brand Strategy",
     ],
-    gradient: "from-purple-500 to-pink-500",
+    gradient: "bg-button-gradient",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ export const Data_services: ServiceItem[] = [
       "Professional print materials that make a lasting impression and communicate your message effectively.",
     icon: <Printer className="w-8 h-8" />,
     features: ["Business Cards", "Brochures", "Posters", "Packaging Design"],
-    gradient: "from-blue-500 to-cyan-500",
+    gradient: "bg-button-gradient",
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ export const Data_services: ServiceItem[] = [
       "UI/UX Design",
       "System Integration",
     ],
-    gradient: "from-green-500 to-emerald-500",
+    gradient: "bg-button-gradient",
   },
   {
     id: 4,
@@ -51,7 +51,7 @@ export const Data_services: ServiceItem[] = [
       "Corporate Portraits",
       "Commercial Videos",
     ],
-    gradient: "from-orange-500 to-red-500",
+    gradient: "bg-button-gradient",
   },
   {
     id: 5,
@@ -65,6 +65,6 @@ export const Data_services: ServiceItem[] = [
       "Video Editing",
       "Visual Effects",
     ],
-    gradient: "from-indigo-500 to-purple-500",
+    gradient: "bg-button-gradient",
   },
 ];

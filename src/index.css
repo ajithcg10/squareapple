@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --main-color: #eff3f4;
+  --light-color: #ffff;
+  --dark-color: #1a202c;
+  --main-bg: #105a70;
+  --gradient-colors: linear-gradient(135deg, #72cac6 0%, #fbb040 100%);
+  --gradient-button: linear-gradient(135deg, #72cac6 0%, #105a70 100%);
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-colors);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback */
+  }
+  .bg-gradient-custom {
+    background: var(--gradient-colors);
+  }
+  .bg-button-gradient {
+    background: var(--gradient-button);
+  }
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",

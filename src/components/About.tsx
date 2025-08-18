@@ -90,7 +90,7 @@ const About = () => {
   return (
     <motion.section
       id="about"
-      className="py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen"
+      className="py-20 px-4  bg-[#043745] min-h-screen"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
@@ -105,20 +105,17 @@ const About = () => {
           viewport={{ once: true, amount: 0.3 }}
           variants={headerVariants}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full mb-6">
-            <headerData.badge.icon className="w-5 h-5 text-purple-600" />
-            <span className="text-purple-800 font-medium">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-main rounded-full mb-6">
+            <headerData.badge.icon className="w-5 h-5 text-light" />
+            <span className="text-light font-medium">
               {headerData.badge.text}
             </span>
           </div>
-          <h2 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
+          <h2 className="text-5xl text-gradient font-bold text-ls  mb-6 leading-tight">
             {headerData.title}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              {" "}
-              {headerData.highlight}
-            </span>
+            <span className="text-main"> {headerData.highlight}</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl  max-w-3xl mx-auto leading-relaxed">
             {headerData.description}
           </p>
         </motion.div>
@@ -138,7 +135,7 @@ const About = () => {
               variants={statsVariants}
               custom={index}
             >
-              <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 text-white mb-4">
+              <div className="inline-flex p-3 rounded-xl bg-main text-light mb-4">
                 <stat.icon className="w-6 h-6" />
               </div>
               <div className="text-3xl font-bold text-gray-900 mb-2">
@@ -173,7 +170,7 @@ const About = () => {
               custom={index}
             >
               <div className="bg-white rounded-2xl h-[60vh] p-8 shadow-lg border border-gray-100">
-                <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 text-white mb-6">
+                <div className="inline-flex p-4 rounded-xl bg-main text-white mb-6">
                   <item.icon className="w-8 h-8" />
                 </div>
                 <h3

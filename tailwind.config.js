@@ -18,11 +18,20 @@ module.exports = {
           to: { opacity: "1", transform: "translateX(0)" },
         },
       },
+
       animation: {
         fadeIn: "fadeIn 0.3s ease-out",
         slideIn: "slideIn 0.4s ease-out",
         slideOut: "slideOut 0.4s ease-out",
         slideInItem: "slideInItem 0.3s ease-out forwards",
+      },
+      colors: {
+        main: "var(--main-color)",
+        light: "var(--light-color)",
+        dark: "var(--dark-color)",
+      },
+      backgroundColor: {
+        main: "var(--main-bg)",
       },
     },
   },

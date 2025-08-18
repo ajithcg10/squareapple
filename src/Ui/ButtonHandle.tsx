@@ -19,8 +19,7 @@ const ButtonHandle: React.FC<ButtonProps> = ({
     <button
       type={type}
       onClick={onClick}
-      className={`bg-gradient-to-r from-purple-600 to-pink-600 
-                  hover:from-purple-700 hover:to-pink-700 
+      className={`bg-button-gradient
                   text-white px-8 py-4 rounded-xl font-semibold 
                   transition-all duration-300 hover:scale-105 hover:shadow-lg 
                   flex items-center gap-2 whitespace-nowrap ${className}`}

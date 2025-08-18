@@ -8,10 +8,7 @@ const Services: React.FC = () => {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
 
   return (
-    <section
-      id="services"
-      className="py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen"
-    >
+    <section id="services" className="py-20 px-4 bg-main min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -20,18 +17,15 @@ const Services: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full mb-6">
-            <Sparkles className="w-5 h-5 text-purple-600" />
-            <span className="text-purple-800 font-medium">Our Services</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-main rounded-full mb-6">
+            <Sparkles className="w-5 h-5 text-[#fff]" />
+            <span className="text-[#Fff]  font-medium">Our Services</span>
           </div>
-          <h2 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
+          <h2 className="text-5xl text-gradient font-bold  mb-6 leading-tight">
             Crafting Digital
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              {" "}
-              Excellence
-            </span>
+            <span className="text-main "> Excellence</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl  max-w-3xl mx-auto leading-relaxed">
             We deliver comprehensive creative solutions that elevate your brand
             and drive meaningful results across all digital touchpoints.
           </p>
@@ -61,7 +55,7 @@ const Services: React.FC = () => {
                   transition: { duration: 0.5, delay: 0.2 },
                 },
               }}
-              className={`group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer border border-gray-100 overflow-hidden ${
+              className={`group relative rounded-xl bg-[#043745] p-6  hover:border-cyan-300/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-400/40 overflow-hidden ${
                 hoveredService === service.id ? "scale-105 -translate-y-2" : ""
               }`}
               onMouseEnter={() => setHoveredService(service.id)}
@@ -80,29 +74,24 @@ const Services: React.FC = () => {
               </div>
 
               {/* Content */}
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors">
+              <h3 className="text-2xl font-bold  mb-4 group-hover:text-gradient transition-colors">
                 {service.title}
               </h3>
 
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                {service.description}
-              </p>
+              <p className=" mb-6 leading-relaxed">{service.description}</p>
 
               {/* Features */}
               <div className="space-y-2 mb-6">
                 {service.features.map((feature, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2 text-sm text-gray-500"
-                  >
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full" />
+                  <div key={index} className="flex items-center gap-2 text-sm ">
+                    <div className="w-1.5 h-1.5 bg-gradient-custom  rounded-full" />
                     <span>{feature}</span>
                   </div>
                 ))}
               </div>
 
               {/* CTA */}
-              <div className="flex items-center gap-2 text-gray-800 font-medium group-hover:text-purple-600 transition-colors">
+              <div className="flex items-center gap-2 font-medium group-hover:text-gradient transition-colors">
                 <span>Learn More</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
@@ -117,9 +106,9 @@ const Services: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <div className="inline-flex flex-col md:flex-row items-center gap-4 bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
+          <div className="inline-flex flex-col md:flex-row items-center gap-4 backdrop-blur-md bg-[#fff] text-[#000] p-6 rounded-lg transition-all duration-300">
             <div className="text-center md:text-left">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              <h3 className="text-2xl font-bold  mb-2">
                 Ready to Get Started?
               </h3>
               <p className="text-gray-600">
